@@ -1,0 +1,19 @@
+<div *ngIf="position">
+    <div *ngIf="positionName">
+        <p>ISS is on {{positionName}}</p>
+    </div>
+    <ng-template #elseBlock>
+        <p>ISS is probably over the noname place</p>
+    </ng-template>
+
+    <sebm-google-map [latitude]="position.latitude" [longitude]="position.longitude" [streetViewControl]="false">
+        <sebm-google-map-marker [latitude]="position.latitude" [longitude]="position.longitude" [title]="ISS"
+                                [label]="ISS">
+            <sebm-google-map-info-window [disableAutoPan]="true">
+                Latitude {{position.latitude}}<br/>
+                Longitude: {{position.longitude}}</br/>
+                Altitude: {{position.altitude}} kms
+            </sebm-google-map-info-window>
+        </sebm-google-map-marker>
+    </sebm-google-map>
+</div>
