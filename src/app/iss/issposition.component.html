@@ -1,8 +1,8 @@
-<div *ngIf="position">
-    <div *ngIf="positionName">
+<div *ngIf="position; else loading">
+    <div *ngIf="positionName; else noFoundAddress">
         <p>ISS is on {{positionName}}</p>
     </div>
-    <ng-template #elseBlock>
+    <ng-template #noFoundAddress>
         <p>ISS is probably over the noname place</p>
     </ng-template>
 
@@ -17,3 +17,4 @@
         </sebm-google-map-marker>
     </sebm-google-map>
 </div>
+<template #loading>Fetching data...</template>
