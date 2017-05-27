@@ -15,13 +15,12 @@ import {WhereIsApiService} from "../shared/services/where-is-api-service.service
 })
 export class ISSPositionComponent implements OnInit, OnDestroy
 {
-    private iconUrl: string;
-    private position: SatelitePosition;
-    private positionName: string;
-    private reversedPositionGeocode: Object;
+    position: SatelitePosition;
+    positionName: string;
+    reversedPositionGeocode: Object;
 
-    private posListener;
-    private reversedGeoCodeListener;
+    posListener;
+    reversedGeoCodeListener;
 
     constructor(private whereIsApiService: WhereIsApiService,
                 private gMapsApiService: GoogleMapsApiService)
