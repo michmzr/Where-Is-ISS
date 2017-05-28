@@ -52,8 +52,6 @@ export class WhereIsApiService implements OnInit
         this.loading = false;
         this.lastResponse = res.json();
 
-        console.debug(this.lastResponse);
-
         return this.lastResponse;
     }
 
