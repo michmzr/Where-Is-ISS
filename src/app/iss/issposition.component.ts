@@ -38,7 +38,7 @@ export class ISSPositionComponent implements OnInit, OnDestroy
 
     trackPosition()
     {
-        this.posListener = IntervalObservable.create(1000).subscribe(() =>
+        this.posListener = IntervalObservable.create(1800).subscribe(() =>
         {
             this.whereIsApiService.getIssPosition().subscribe(position => this.onPositionLoaded(position))
         });
