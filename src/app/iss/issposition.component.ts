@@ -38,7 +38,7 @@ export class ISSPositionComponent implements OnInit, OnDestroy
 
     trackPosition()
     {
-        this.posListener = IntervalObservable.create(2000).subscribe(() =>
+        this.posListener = IntervalObservable.create(1000).subscribe(() =>
         {
             this.whereIsApiService.getIssPosition().subscribe(position => this.onPositionLoaded(position))
         });
@@ -49,6 +49,7 @@ export class ISSPositionComponent implements OnInit, OnDestroy
         console.debug(position);
 
         this.position = position as SatelitePosition;
+        this.positionName = null;
 
         let lat = this.position.latitude;
         let lng = this.position.longitude;
